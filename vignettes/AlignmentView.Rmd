@@ -1,0 +1,54 @@
+---
+title: "AlignmentView"
+author: "Anna Grattagliano"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{AlignmentView}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+    collapse = TRUE,
+    comment = "#>"
+)
+```
+
+
+```{r setup}
+library(AlignmentView)
+```
+
+# Introduction
+This package permits you to visualize the CIGAR string, the reference 
+genome sequence and a specific read's alignment. The user can input the 
+BAM/SAM file, the read ID and the genome they need.
+
+## show_alignment function
+**Usage:**
+This function uses all the previous ones and will display the results of 
+the alignment. 
+Input the following parameters: 
+
+- `file`: needs to be a BAM/SAM file
+
+- `read_id`: the name of a specific read that is present in the BAM/SAM file
+
+- `genome`: is the reference genome the user wants to use
+
+**returns** the CIGAR string, the aligned Read_id to it's reference genome
+
+**Example**
+```{r AlignmentView_example}
+library(BSgenome.Hsapiens.UCSC.hg38)
+file <- system.file("extdata", "ERR188273_chrX.bam", package = "AlignmentView")
+read_id <- "ERR188273.11944385"
+genome <- BSgenome.Hsapiens.UCSC.hg38
+show_alignment(file, read_id, genome)
+```
+
+```{r session-info, echo=FALSE}
+sessionInfo()
+```

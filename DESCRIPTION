@@ -1,0 +1,20 @@
+Package: AlignmentView
+Title: Show the CIGAR, read and reference genome sequences of a given read ID and BAM/SAM file with the AlignmentView package
+Version: 0.0.90
+Authors@R: 
+    person(given = "Anna",
+           family = "Grattagliano",
+           role = c("aut", "cre"),
+           email = "anna.grattagliano@mail.polimi.it")
+Description: The AlignmentView package will take as input a BAM/SAM file , a specific read ID and a Genome provided by the user. The output will show the precise  sequence alignment of the provided read ID to the reference genome according to the mapped read’s CIGAR string. Nucleotides are given a color in order to have a clear visualization of the alignment. 
+Depends: R(>= 4.4.0)
+Imports: Rsamtools, Biostrings, crayon, data.table, GenomicRanges, BSgenome
+Suggests: knitr, rmarkdown, BiocStyle, BSgenome.Hsapiens.UCSC.hg38
+VignetteBuilder: knitr
+License: GPL-2
+URL: https://github.com/annagrattagaliano
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE) 
+RoxygenNote: 7.3.1
+biocViews: ExperimentData, Alignment, DNASeqData
+BugReports: https://github.com/annagrattagliano/AlignmentView/issues
